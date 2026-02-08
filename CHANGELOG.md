@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Exit TV mode by holding `Esc` for 3 seconds.
+
 ### Fixed
 
 - Handle TV exit on the `WELCOME` page.

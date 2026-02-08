@@ -83,7 +83,7 @@
 
 1. Open a regular YouTube page.
 2. Click **Smart TV** in the left menu or the TV icon near the fullscreen button.
-3. YouTube opens in TV mode (in a new tab or window, depending on your options). Press `Esc` inside TV mode to leave.
+3. YouTube opens in TV mode (in a new tab or window, depending on your options). Press `Esc` to leave, or hold `Esc` for 3 seconds as a fallback.
 
 ## 📱 Link your phone with a TV code
 
