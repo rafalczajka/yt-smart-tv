@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL-3.0" /></a>
-  <a href="https://github.com/rczajkadev/yt-smart-tv/releases"><img src="https://img.shields.io/github/v/release/rczajkadev/yt-smart-tv?label=Release" alt="Release" /></a>
+  <a href="https://github.com/rczajkadev/yt-smart-tv/releases/latest"><img src="https://img.shields.io/github/v/release/rczajkadev/yt-smart-tv?label=Release" alt="Release" /></a>
   <a href="https://github.com/rczajkadev/yt-smart-tv/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rczajkadev/yt-smart-tv/ci.yml?label=Build" alt="CI" /></a>
 </div>
 
@@ -34,7 +34,7 @@
         <img src="assets/github-mark.svg" width="48" />
       </picture>
     </td>
-    <td><a href="https://github.com/rczajkadev/yt-smart-tv/releases">Releases</a></td>
+    <td><a href="https://github.com/rczajkadev/yt-smart-tv/releases/latest">Releases</a></td>
     <td>
       Download a pre-built package. See <a href="#-installation-from-release">Installation (from release)</a>.
     </td>
@@ -115,7 +115,7 @@ To use the extension from an incognito/private window (and open Smart TV in that
 
 ## 📦 Installation (from release)
 
-1. Go to [Releases](https://github.com/rczajkadev/yt-smart-tv/releases) and open the latest one.
+1. Go to [Latest Release](https://github.com/rczajkadev/yt-smart-tv/releases/latest).
 2. Download the ZIP package for your browser:
    - Chromium: `yt-smart-tv-*-chrome.zip`
    - Firefox: `yt-smart-tv-*-firefox.zip`
