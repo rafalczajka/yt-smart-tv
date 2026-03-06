@@ -21,10 +21,10 @@
     ]
   },
   "devDependencies": {
-    "@eslint/js": "10.0.1",
+    "@eslint/js": "9.39.3",
     "@tsconfig/svelte": "5.0.8",
     "@wxt-dev/module-svelte": "2.0.4",
-    "eslint": "10.0.2",
+    "eslint": "9.39.3",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "lint-staged": "16.3.2",
