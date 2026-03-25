@@ -7,6 +7,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL-3.0" /></a>
   <a href="https://github.com/rczajkadev/yt-smart-tv/releases/latest"><img src="https://img.shields.io/github/v/release/rczajkadev/yt-smart-tv?label=Release" alt="Release" /></a>
   <a href="https://github.com/rczajkadev/yt-smart-tv/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rczajkadev/yt-smart-tv/ci.yml?label=Build" alt="CI" /></a>
+  <a href="PRIVACY.md"><img src="https://img.shields.io/badge/Privacy-Policy-lightgrey" alt="Privacy Policy" /></a>
 </div>
 
 <br/>
@@ -51,9 +52,9 @@
   </tr>
 </table>
 
-> A lightweight browser extension that adds **Smart TV** controls to YouTube. It integrates with the standard layout
-> by inserting buttons into the **left sidebar** and **player controls** (next to the fullscreen button),
-> so you can open **YouTube TV** with one click and control playback from your phone after pairing (TV code).
+> A lightweight browser extension that adds **Smart TV** controls directly to YouTube. It inserts buttons into the
+> **left sidebar** and **player controls** (next to the fullscreen button), so you can open **YouTube TV** from the
+> current page, keep the current video and timestamp, and control playback from your phone after pairing (TV code).
 
 - ✨ [Features](#-features)
 - ✅ [Compatibility](#-compatibility)
