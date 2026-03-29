@@ -1,6 +1,6 @@
 const OVERLAY_SELECTOR = 'yt-unified-overlay-stage';
-const TEXT_ELEMENT_SELECTOR = 'yt-formatted-string';
-const EXIT_HEADER_CONTENT = 'Exit YouTube';
+const EXIT_ICON_SELECTOR = 'yt-icon';
+const EXIT_ICON_CODEPOINT = 0xe37e;
 const ESC_HOLD_TO_EXIT_MS = 3_000;
 
 const BODY_CLASS_SELECTORS_FOR_EXIT: string[] = [
@@ -12,8 +12,8 @@ const BODY_CLASS_SELECTORS_FOR_EXIT: string[] = [
  * Content script entrypoint for YouTube TV pages (`/tv`).
  *
  * @remarks
- * - Watches for the "Exit YouTube" overlay. When it appears, it sends a message to the background
- *   script to close the TV window.
+ * - Watches for the exit overlay identified by YouTube's exit icon. When it appears, it sends a
+ *   message to the background script to close the TV window.
  * - Also listens for the `Escape` key and closes the TV window when the page body has one of the
  *   {@link BODY_CLASS_SELECTORS_FOR_EXIT} classes.
  * - As a fallback, holding `Escape` for {@link ESC_HOLD_TO_EXIT_MS} ms closes the TV window even
@@ -101,9 +101,24 @@ function sendExitRequestOnce(): void {
 }
 
 function isExitScreenDisplayed(container: Element): boolean {
-  const headers = container.querySelectorAll(TEXT_ELEMENT_SELECTOR);
-  const expectedHeaderContent = EXIT_HEADER_CONTENT.toLowerCase();
-  return Array.from(headers).some(
-    header => header.textContent?.trim().toLowerCase() === expectedHeaderContent
-  );
+  const icons = Array.from(container.querySelectorAll(EXIT_ICON_SELECTOR));
+  return icons.some(isExitIcon);
+}
+
+function isExitIcon(icon: Element): boolean {
+  const beforeStyles = window.getComputedStyle(icon, '::before');
+  const content = beforeStyles.content;
+
+  if (!content || content === 'none') return false;
+
+  const rawContent = content.slice(1, -1);
+
+  if (!rawContent) return false;
+
+  if (rawContent.startsWith('\\')) {
+    const codepoint = Number.parseInt(rawContent.slice(1), 16);
+    return codepoint === EXIT_ICON_CODEPOINT;
+  }
+
+  return rawContent.codePointAt(0) === EXIT_ICON_CODEPOINT;
 }
