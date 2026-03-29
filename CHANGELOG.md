@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-03-29
+
+### Added
+
+- Add a privacy policy.
+- Add Chrome Web Store listing assets (store icon and screenshots).
+
+### Fixed
+
+- Make TV exit overlay detection work regardless of the YouTube UI language.
+
+### Changed
+
+- Update dependencies and apply audit-related fixes.
+
 ## [1.0.4] - 2026-03-20
 
 ### Changed
