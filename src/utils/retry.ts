@@ -4,50 +4,36 @@
 export interface RetryOptions {
   /**
    * When `true`, retries never stop due to timeouts.
-   *
-   * @defaultValue `false`
    */
   retryIndefinitely?: boolean;
 
   /**
    * Total time budget for retries (ignored when {@link RetryOptions.retryIndefinitely} is `true`).
-   *
-   * @defaultValue `300000` (5 minutes)
    */
   timeoutMs?: number;
 
   /**
    * Initial retry delay in milliseconds.
-   *
-   * @defaultValue `200`
    */
   initialDelayMs?: number;
 
   /**
    * Maximum retry delay in milliseconds.
-   *
-   * @defaultValue `5000`
    */
   maxDelayMs?: number;
 
   /**
    * Backoff multiplier applied after each attempt.
-   *
-   * @defaultValue `1.5`
    */
   backoffFactor?: number;
 
   /**
    * Whether to accelerate retries by reacting to DOM mutations.
-   *
-   * @defaultValue `true`
    */
   observeMutations?: boolean;
 
   /**
    * Root node for {@link MutationObserver} when {@link RetryOptions.observeMutations} is enabled.
-   *
-   * @defaultValue `document.documentElement ?? document.body`
    */
   observerRoot?: Node | null;
 }
