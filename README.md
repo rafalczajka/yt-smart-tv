@@ -17,8 +17,8 @@
     <td align="center">
       <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/75.0.1/chrome/chrome_48x48.png" alt="Chromium" />
     </td>
-    <td>Chrome&nbsp;Web&nbsp;Store</td>
-    <td>Not published yet</td>
+    <td><a href="https://chromewebstore.google.com/detail/youtube-smart-tv/hbjlacanppahcoagjkfgpkolhbfdkmdi">Chrome&nbsp;Web&nbsp;Store</a></td>
+    <td>Last updated: April 1, 2026 (v1.0.5)</td>
   </tr>
   <tr>
     <td align="center">
@@ -115,6 +115,12 @@ To use the extension from an incognito/private window (and open Smart TV in that
 3. Set **Run in Private Windows** to **Allow**.
 
 ## 📦 Installation (from release)
+
+### Chrome Web Store
+
+For Google Chrome and other Chromium-based browsers, install the published version from the [Chrome Web Store](https://chromewebstore.google.com/detail/youtube-smart-tv/hbjlacanppahcoagjkfgpkolhbfdkmdi).
+
+### GitHub Releases
 
 1. Go to [Latest Release](https://github.com/rczajkadev/yt-smart-tv/releases/latest).
 2. Download the ZIP package for your browser:
