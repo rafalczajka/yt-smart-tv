@@ -7,7 +7,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL-3.0" /></a>
   <a href="https://github.com/rczajkadev/yt-smart-tv/releases/latest"><img src="https://img.shields.io/github/v/release/rczajkadev/yt-smart-tv?label=Release" alt="Release" /></a>
   <a href="https://github.com/rczajkadev/yt-smart-tv/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rczajkadev/yt-smart-tv/ci.yml?label=Build" alt="CI" /></a>
-  <a href="PRIVACY.md"><img src="https://img.shields.io/badge/Privacy-Policy-lightgrey" alt="Privacy Policy" /></a>
+  <a href="PRIVACY.md"><img src="https://img.shields.io/badge/Privacy-Policy-blue" alt="Privacy Policy" /></a>
 </div>
 
 <br/>
