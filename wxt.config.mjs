@@ -8,7 +8,7 @@ export default defineConfig({
     name: 'YouTube Smart TV',
     description: 'One-click launcher for the TV version of YouTube.',
     version: '1.0.5',
-    homepage_url: 'https://github.com/rczajkadev/yt-smart-tv',
+    homepage_url: 'https://github.com/rafalczajka/yt-smart-tv',
     permissions: ['declarativeNetRequest', 'storage'],
     host_permissions: ['https://*.youtube.com/*']
   }

@@ -5,8 +5,8 @@
 
 <div align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL-3.0" /></a>
-  <a href="https://github.com/rczajkadev/yt-smart-tv/releases/latest"><img src="https://img.shields.io/github/v/release/rczajkadev/yt-smart-tv?label=Release" alt="Release" /></a>
-  <a href="https://github.com/rczajkadev/yt-smart-tv/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rczajkadev/yt-smart-tv/ci.yml?label=Build" alt="CI" /></a>
+  <a href="https://github.com/rafalczajka/yt-smart-tv/releases/latest"><img src="https://img.shields.io/github/v/release/rafalczajka/yt-smart-tv?label=Release" alt="Release" /></a>
+  <a href="https://github.com/rafalczajka/yt-smart-tv/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rafalczajka/yt-smart-tv/ci.yml?label=Build" alt="CI" /></a>
   <a href="PRIVACY.md"><img src="https://img.shields.io/badge/Privacy-Policy-blue" alt="Privacy Policy" /></a>
 </div>
 
@@ -35,7 +35,7 @@
         <img src="assets/github-mark.svg" width="48" />
       </picture>
     </td>
-    <td><a href="https://github.com/rczajkadev/yt-smart-tv/releases/latest">Releases</a></td>
+    <td><a href="https://github.com/rafalczajka/yt-smart-tv/releases/latest">Releases</a></td>
     <td>
       Download a pre-built package. See <a href="#-installation-from-release">Installation (from release)</a>.
     </td>
@@ -122,7 +122,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
 ### GitHub Releases
 
-1. Go to [Latest Release](https://github.com/rczajkadev/yt-smart-tv/releases/latest).
+1. Go to [Latest Release](https://github.com/rafalczajka/yt-smart-tv/releases/latest).
 2. Download the ZIP package for your browser:
    - Chromium: `yt-smart-tv-*-chrome.zip`
    - Firefox: `yt-smart-tv-*-firefox.zip`
@@ -158,7 +158,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/rczajkadev/yt-smart-tv.git
+   git clone https://github.com/rafalczajka/yt-smart-tv.git
    cd yt-smart-tv
    ```
 

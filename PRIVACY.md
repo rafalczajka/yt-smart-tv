@@ -53,4 +53,4 @@ The extension does not use or execute remote code.
 
 For questions or support, please use the GitHub repository:
 
-https://github.com/rczajkadev/yt-smart-tv
+https://github.com/rafalczajka/yt-smart-tv
