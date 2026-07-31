@@ -16,6 +16,8 @@ describe('dynamic-rules', () => {
     expect(options.addRules).toHaveLength(1);
 
     const [rule] = options.addRules;
+    assertNonNullOrUndefined(rule, 'Expected addRules to contain a rule');
+
     expect(rule).toMatchObject({
       id,
       priority: 1,
