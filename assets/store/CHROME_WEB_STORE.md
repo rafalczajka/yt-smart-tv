@@ -96,11 +96,10 @@ Allows the extension to run on YouTube pages so it can add Smart TV controls, re
 
 ## Test instructions
 
-No extension-specific credentials are required. A YouTube sign-in may be required for restricted or account-specific content.
+No extension credentials are required.
 
-1. Open a YouTube video page.
-2. Confirm that the Smart TV sidebar entry and the player button next to the fullscreen control are visible.
-3. Start playback, click the player button, and confirm that the TV interface opens with the same video at approximately the same playback position.
-4. Press Esc until YouTube displays its exit screen and confirm that the TV tab or window closes automatically.
-5. Reopen TV mode and hold Esc for three seconds to verify the fallback exit behavior.
-6. Open the extension's settings page, change the "Launch controls" and "Launch behavior" settings, and verify that the corresponding controls and tab or window behavior update.
+1. Open a YouTube video.
+2. Confirm the Smart TV sidebar shortcut and player button are visible.
+3. Play the video, click the player button, and confirm TV mode opens the same video at the same position.
+4. Press Esc until TV mode closes. Reopen it and hold Esc for 3 seconds to test the fallback.
+5. Open extension settings. Toggle "Launch controls" and "Launch behavior", then verify the controls and tab/window behavior change.
