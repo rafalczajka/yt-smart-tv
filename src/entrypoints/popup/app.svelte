@@ -45,7 +45,7 @@
 
     <Card
       type="button"
-      title="Open extension options"
+      title="Open extension settings"
       onclick={handleOptionsClick}
       icon="settings"
     />

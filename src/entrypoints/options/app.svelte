@@ -51,21 +51,21 @@
 </script>
 
 <main>
-  <Header subtitle="Options" />
+  <Header subtitle="Settings" />
 
-  <Section title="Buttons">
+  <Section title="Launch controls">
     <Card
       type="switch"
-      title="Sidebar button"
-      description='Add a "Smart TV" entry in the left navigation menu.'
+      title="Sidebar shortcut"
+      description="Show a Smart TV shortcut in YouTube's sidebar."
       bind:checked={options.showGuideButton}
       disabled={!hydrated}
     />
 
     <Card
       type="switch"
-      title="Sidebar button (mini)"
-      description='Add a "Smart TV" entry in the collapsed mini sidebar.'
+      title="Mini sidebar shortcut"
+      description="Show a Smart TV shortcut in YouTube's collapsed sidebar."
       bind:checked={options.showMiniGuideButton}
       disabled={!hydrated}
     />
@@ -73,17 +73,17 @@
     <Card
       type="switch"
       title="Player button"
-      description="Add a Smart TV button next to the fullscreen control on the player."
+      description="Show a Smart TV button next to the player's fullscreen control."
       bind:checked={options.showPlayerButton}
       disabled={!hydrated}
     />
   </Section>
 
-  <Section title="Behavior">
+  <Section title="Launch behavior">
     <Card
       type="switch"
-      title="TV mode in new window"
-      description="Open TV mode in a new window."
+      title="Open in a new window"
+      description="Open TV mode in a separate window instead of a new tab."
       bind:checked={options.openInNewWindow}
       disabled={!hydrated}
     />
@@ -91,20 +91,20 @@
     {#if options.openInNewWindow}
       <Card
         type="switch"
-        title="TV mode in fullscreen"
-        description="Open TV mode in a fullscreen window."
+        title="Open in full screen"
+        description="Open the TV mode window in full-screen mode."
         bind:checked={options.openInFullscreen}
         disabled={!hydrated}
       />
     {:else}
       <Card
         type="switch"
-        title="TV mode in fullscreen"
-        description='Open TV mode in a fullscreen window.'
+        title="Open in full screen"
+        description="Open the TV mode window in full-screen mode."
         checked={false}
         disabled
       >
-        <p class="hint">ⓘ Enable "TV mode in new window" to use fullscreen.</p>
+        <p class="hint">Available only when "Open in a new window" is enabled.</p>
       </Card>
     {/if}
   </Section>
