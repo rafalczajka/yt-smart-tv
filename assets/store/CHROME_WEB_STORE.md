@@ -44,11 +44,11 @@ none
 
 #### Screenshots
 
-![Screenshot 1](./screenshot-1-callout.png)
-![Screenshot 2](./screenshot-2.png)
-![Screenshot 3](./screenshot-3.png)
-![Screenshot 4](./screenshot-4-callout.png)
-![Screenshot 5](./screenshot-5.png)
+![Screenshot 1](./screenshot-1-v2.png)
+![Screenshot 2](./screenshot-2-v2.png)
+![Screenshot 3](./screenshot-3-v2.png)
+![Screenshot 4](./screenshot-4-v2.png)
+![Screenshot 5](./screenshot-5-v2.png)
 
 #### Small promo tile
 
