@@ -6,7 +6,7 @@ export default defineConfig({
   modules: ['@wxt-dev/module-svelte'],
   manifest: {
     name: 'YouTube Smart TV',
-    description: 'One-click launcher for the TV version of YouTube.',
+    description: 'Open YouTube in TV mode with one click.',
     version: '1.0.5',
     homepage_url: 'https://github.com/rafalczajka/yt-smart-tv',
     permissions: ['declarativeNetRequest', 'storage'],

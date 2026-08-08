@@ -5,58 +5,71 @@
 ### Product details
 
 #### Summary from package
-One-click launcher for the TV version of YouTube.
+
+Open YouTube in TV mode with one click.
 
 #### Description
-YouTube Smart TV adds Smart TV controls directly to YouTube, making it easy to switch from the standard YouTube interface to YouTube TV.
+
+YouTube Smart TV adds convenient launch controls to standard YouTube pages, making it easy to open YouTube's TV interface without manually changing the URL.
 
 Main features:
-- Adds a Smart TV entry to the YouTube sidebar.
-- Adds a Smart TV button next to the fullscreen button in the player.
-- Opens YouTube TV from the current YouTube page and, when using the player button, keeps the current video and playback timestamp.
-- Can open TV mode in a new window and optionally in fullscreen.
-- Includes an options page to control which buttons are visible.
-- Supports exiting TV mode with Esc, with a 3-second hold fallback.
+
+- Adds Smart TV shortcuts to the full and compact YouTube sidebars.
+- Adds a Smart TV button next to the player's fullscreen control.
+- Opens the current video in TV mode and preserves its playback position when launched from the player.
+- Opens TV mode in a new tab or a dedicated window, with optional fullscreen mode.
+- Lets you choose which controls are visible and how TV mode opens.
+- Lets you close TV mode with Esc; holding Esc for three seconds provides a fallback.
 
 Typical use case:
-Open a video on regular YouTube, switch to YouTube TV, and then pair your phone with a TV code to use it as a remote.
+Start a video on YouTube, switch to the TV interface, then pair your phone with a TV code and use it as a remote control.
 
 #### Category
+
 Entertainment
 
 #### Language
+
 English
 
 ### Graphic assets
 
 #### Store icon
-![YouTube Smart TV](/assets/store/store-icon.png)
+
+![YouTube Smart TV](./store-icon.png)
 
 #### Global promo video
+
 none
 
 #### Screenshots
-![Screenshot 1](/assets/store/screenshot-1-callout.png)
-![Screenshot 2](/assets/store/screenshot-2.png)
-![Screenshot 3](/assets/store/screenshot-3.png)
-![Screenshot 4](/assets/store/screenshot-4-callout.png)
-![Screenshot 5](/assets/store/screenshot-5.png)
+
+![Screenshot 1](./screenshot-1-callout.png)
+![Screenshot 2](./screenshot-2.png)
+![Screenshot 3](./screenshot-3.png)
+![Screenshot 4](./screenshot-4-callout.png)
+![Screenshot 5](./screenshot-5.png)
 
 #### Small promo tile
+
 none
 
 #### Marquee promo tile
+
 none
 
 ### Additional fields
 
 #### Official URL
+
 none
 
 #### Homepage URL
+
 https://github.com/rafalczajka/yt-smart-tv
 
 #### Support URL
+
 https://github.com/rafalczajka/yt-smart-tv/issues/new/choose
 
 ## Privacy
@@ -64,24 +77,30 @@ https://github.com/rafalczajka/yt-smart-tv/issues/new/choose
 ### Single purpose
 
 #### Single purpose description
-Add Smart TV controls directly to YouTube pages and open YouTube TV from the current page, including support for the current video and playback timestamp.
+
+Add launch controls to YouTube pages that open YouTube's TV interface, optionally preserving the current video and playback position.
 
 ### Permission justification
 
 #### declarativeNetRequest justification
-Sets a Smart TV-compatible User-Agent only for main-frame requests to youtube.com/tv so YouTube TV opens and works correctly in the browser.
+
+Overrides the User-Agent header only for top-level requests to youtube.com/tv, allowing YouTube to serve its TV interface in a desktop browser.
 
 #### storage justification
-Stores extension preferences, such as which Smart TV buttons are enabled and whether TV mode opens in a new window or in fullscreen.
+
+Stores user preferences in the browser's synchronized extension storage, including button visibility and whether TV mode opens in a tab, a separate window, or fullscreen.
 
 #### Host permission justification
-Required to add Smart TV controls on YouTube pages, read the current YouTube page URL and playback state, detect TV exit screens, and open or close YouTube TV.
+
+Allows the extension to run on YouTube pages so it can add Smart TV controls, read the current page URL and video playback position, and detect TV-mode exit screens.
 
 ## Test instructions
-No extension credentials required. YouTube may require sign-in to play videos.
+
+No extension-specific credentials are required. A YouTube sign-in may be required for restricted or account-specific content.
 
 1. Open a YouTube video page.
-2. Verify the Smart TV sidebar entry and player button appear.
-3. Click the player button and verify YouTube TV opens with the current video and timestamp.
-4. Verify TV mode can be closed with Esc; if needed, press it more than once or hold it for 3 seconds.
-5. Open the options page and verify settings.
+2. Confirm that the Smart TV sidebar entry and the player button next to the fullscreen control are visible.
+3. Start playback, click the player button, and confirm that the TV interface opens with the same video at approximately the same playback position.
+4. Press Esc until YouTube displays its exit screen and confirm that the TV tab or window closes automatically.
+5. Reopen TV mode and hold Esc for three seconds to verify the fallback exit behavior.
+6. Open the extension's options page, change the button visibility and launch behavior settings, and verify that the corresponding controls and tab or window behavior update.
