@@ -103,4 +103,4 @@ No extension-specific credentials are required. A YouTube sign-in may be require
 3. Start playback, click the player button, and confirm that the TV interface opens with the same video at approximately the same playback position.
 4. Press Esc until YouTube displays its exit screen and confirm that the TV tab or window closes automatically.
 5. Reopen TV mode and hold Esc for three seconds to verify the fallback exit behavior.
-6. Open the extension's options page, change the button visibility and launch behavior settings, and verify that the corresponding controls and tab or window behavior update.
+6. Open the extension's settings page, change the "Launch controls" and "Launch behavior" settings, and verify that the corresponding controls and tab or window behavior update.
