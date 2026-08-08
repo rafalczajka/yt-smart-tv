@@ -52,7 +52,7 @@ none
 
 #### Small promo tile
 
-none
+![Small promo tile](./small-promo-tile.png)
 
 #### Marquee promo tile
 
