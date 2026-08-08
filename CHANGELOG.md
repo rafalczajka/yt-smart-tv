@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-08-08
+
+### Changed
+
+- Improve labels and descriptions in the extension settings and popup.
+- Refine the extension description, project links, and installation instructions.
+
+### Security
+
+- Update dependencies to address known security vulnerabilities.
+
 ## [1.0.5] - 2026-03-29
 
 ### Added

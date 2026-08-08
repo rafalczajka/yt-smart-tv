@@ -7,7 +7,7 @@ export default defineConfig({
   manifest: {
     name: 'YouTube Smart TV',
     description: 'Open YouTube in TV mode with one click.',
-    version: '1.0.5',
+    version: '1.0.6',
     homepage_url: 'https://github.com/rafalczajka/yt-smart-tv',
     permissions: ['declarativeNetRequest', 'storage'],
     host_permissions: ['https://*.youtube.com/*']

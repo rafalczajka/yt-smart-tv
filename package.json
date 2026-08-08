@@ -1,5 +1,6 @@
 {
   "name": "yt-smart-tv",
+  "version": "1.0.6",
   "scripts": {
     "dev:chrome": "wxt",
     "dev:firefox": "wxt -b firefox",
