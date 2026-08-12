@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-08-12
+
+### Fixed
+
+- Fix the extension not working on Firefox.
+
 ## [1.0.6] - 2026-08-08
 
 ### Changed
