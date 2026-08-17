@@ -1,4 +1,10 @@
-import { getUserAgentUpdateRuleOptions } from '~/dynamic-rules';
+import { LazyOptions } from '~/options';
+import {
+  getUserAgentUpdateRuleOptions,
+  getYouTubeRelativeUri,
+  messages,
+  openYouTubeTv
+} from '~/tv';
 
 /**
  * Background entrypoint.
@@ -14,24 +20,24 @@ export default defineBackground(() => {
     await browser.declarativeNetRequest.updateDynamicRules(getUserAgentUpdateRuleOptions());
   });
 
-  browser.runtime.onMessage.addListener(async (request, sender) => {
+  browser.runtime.onMessage.addListener(async (message, sender) => {
     const isIncognito = sender.tab?.incognito ?? false;
 
-    switch (request) {
-      case requests.OPEN_SMART_TV: {
+    switch (message) {
+      case messages.OPEN_SMART_TV: {
         const options = await lazyOptions.get();
         await openYouTubeTv('', options, isIncognito);
         break;
       }
 
-      case requests.OPEN_SMART_TV_WITH_URI: {
+      case messages.OPEN_SMART_TV_WITH_URI: {
         const uri = getYouTubeRelativeUri(sender.tab?.url);
         const options = await lazyOptions.get();
         await openYouTubeTv(uri, options, isIncognito);
         break;
       }
 
-      case requests.CLOSE_SMART_TV: {
+      case messages.CLOSE_SMART_TV: {
         const tabId = sender.tab?.id;
         if (tabId !== undefined) await browser.tabs.remove(tabId);
         break;

@@ -1,8 +1,7 @@
 <script lang="ts">
-  import Card from '~/components/ui/card.svelte';
-  import Footer from '~/components/ui/footer.svelte';
-  import Header from '~/components/ui/header.svelte';
-  import Section from '~/components/ui/section.svelte';
+  import { Card, Footer, Header, Section } from '~/components/ui';
+  import { LazyOptions } from '~/options';
+  import { openOptions, openYouTube, openYouTubeTv } from '~/tv';
 
   const handleYouTubeClick = async () => {
     await openYouTube();

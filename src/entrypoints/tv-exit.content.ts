@@ -1,3 +1,6 @@
+import { retryUntil } from '~/lib/retry';
+import { messages } from '~/tv';
+
 const OVERLAY_SELECTOR = 'yt-unified-overlay-stage';
 const EXIT_ICON_SELECTOR = 'yt-icon';
 const EXIT_ICON_CODEPOINT = 0xe37e;
@@ -97,7 +100,7 @@ function sendExitRequestOnce(): void {
 
   requestAlreadySent = true;
   cancelEscHold();
-  browser.runtime.sendMessage(requests.CLOSE_SMART_TV);
+  browser.runtime.sendMessage(messages.CLOSE_SMART_TV);
 }
 
 function isExitScreenDisplayed(container: Element): boolean {

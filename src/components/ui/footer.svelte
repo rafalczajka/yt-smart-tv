@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import { getExtensionVersion } from '~/lib/extension-info';
+</script>
 
 <footer class="footer">
   <nav class="links" aria-label="Project links">

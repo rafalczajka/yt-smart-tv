@@ -11,6 +11,9 @@ export default defineConfig({
   srcDir: 'src',
   outDir: 'dist',
   modules: ['@wxt-dev/module-svelte'],
+  imports: {
+    dirs: []
+  },
   manifest: ({ browser }) => ({
     name: 'YouTube Smart TV',
     description: 'Open YouTube in TV mode with one click.',

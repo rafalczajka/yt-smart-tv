@@ -1,5 +1,6 @@
 <script lang="ts">
   import ExtensionIcon from '~/components/icons/extension.svelte';
+  import { getExtensionName } from '~/lib/extension-info';
 
   type Props = {
     title?: string;

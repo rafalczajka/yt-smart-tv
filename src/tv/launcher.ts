@@ -1,3 +1,7 @@
+import type { BehaviorOptions } from '~/options';
+
+import { getYouTubeTvUrl } from './urls';
+
 /**
  * Opens YouTube TV either in a new window or a new tab.
  *

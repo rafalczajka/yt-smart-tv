@@ -1,10 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import Card from '~/components/ui/card.svelte';
-  import Footer from '~/components/ui/footer.svelte';
-  import Header from '~/components/ui/header.svelte';
-  import Section from '~/components/ui/section.svelte';
+  import { Card, Footer, Header, Section } from '~/components/ui';
+  import { emptyOptions, getOptions, type Options, setOptions } from '~/options';
 
   const SAVE_DEBOUNCE_MS = 200;
 

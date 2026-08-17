@@ -1,22 +1,6 @@
 const BASE_URL = 'https://www.youtube.com';
 
 /**
- * Parses a string into a {@link URL} without throwing an error.
- *
- * @param value - Input string.
- * @returns Parsed URL, or `null` when input is missing or invalid.
- */
-export function tryParseUrl(value?: string): URL | null {
-  if (!value) return null;
-
-  try {
-    return new URL(value);
-  } catch {
-    return null;
-  }
-}
-
-/**
  * Checks whether a URL is an HTTPS YouTube URL (including subdomains).
  *
  * @param url - Parsed URL.
@@ -76,4 +60,20 @@ export function getUrlWithTimestamp(urlString: string, currentTimeSeconds: numbe
 
   url.searchParams.set('t', seconds.toString());
   return url.toString();
+}
+
+/**
+ * Parses a string into a {@link URL} without throwing an error.
+ *
+ * @param value - Input string.
+ * @returns Parsed URL, or `null` when input is missing or invalid.
+ */
+export function tryParseUrl(value?: string): URL | null {
+  if (!value) return null;
+
+  try {
+    return new URL(value);
+  } catch {
+    return null;
+  }
 }

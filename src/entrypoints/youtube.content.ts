@@ -2,6 +2,9 @@ import { mount } from 'svelte';
 
 import SmartTvButton from '~/components/content/smart-tv-button.svelte';
 import SmartTvPlayerButton from '~/components/content/smart-tv-player-button.svelte';
+import { type RetryHandle, retryUntil } from '~/lib/retry';
+import { getOptions, isOptionKey, type OptionKey } from '~/options';
+import { getUrlWithTimestamp, messages } from '~/tv';
 
 const SMART_TV_BUTTON_ID = 'smart-tv-button';
 const SMART_TV_MINI_BUTTON_ID = 'smart-tv-mini-button';
@@ -144,7 +147,7 @@ function addSmartTvButton(buttonId: string, target: Element, mini = false): bool
     props: {
       id: buttonId,
       mini,
-      onclick: () => browser.runtime.sendMessage(requests.OPEN_SMART_TV)
+      onclick: () => browser.runtime.sendMessage(messages.OPEN_SMART_TV)
     }
   });
 
@@ -168,7 +171,7 @@ function addSmartTvPlayerButton(): boolean {
     const urlWithTimestamp = getUrlWithTimestamp(window.location.href, currentTime);
     history.replaceState(null, '', urlWithTimestamp);
 
-    browser.runtime.sendMessage(requests.OPEN_SMART_TV_WITH_URI);
+    browser.runtime.sendMessage(messages.OPEN_SMART_TV_WITH_URI);
   };
 
   mount(SmartTvPlayerButton, {

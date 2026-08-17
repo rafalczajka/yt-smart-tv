@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { getUserAgentUpdateRuleOptions } from '../src/dynamic-rules';
-import agents from '../src/user-agents.json';
+import { getUserAgentUpdateRuleOptions } from '../src/tv';
+import agents from '../src/tv/user-agents.json';
 import { assertNonNullOrUndefined } from './utils';
 
 describe('dynamic-rules', () => {

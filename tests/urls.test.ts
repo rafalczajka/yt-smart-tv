@@ -6,7 +6,7 @@ import {
   getYouTubeTvUrl,
   isYouTubeUrl,
   tryParseUrl
-} from '../src/utils/url';
+} from '../src/tv';
 
 describe('tryParseUrl', () => {
   it('returns null for missing input', () => {
