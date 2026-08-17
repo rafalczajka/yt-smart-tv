@@ -4,11 +4,7 @@
 
 <footer class="footer">
   <nav class="links" aria-label="Project links">
-    <a
-      href="https://github.com/rafalczajka/yt-smart-tv"
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a href="https://github.com/rafalczajka/yt-smart-tv" target="_blank" rel="noreferrer">
       Source code
     </a>
     <span class="sep" aria-hidden="true">·</span>

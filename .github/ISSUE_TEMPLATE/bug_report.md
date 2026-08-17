@@ -4,24 +4,28 @@ about: Report a bug in the extension
 title: '[Bug]: '
 labels: ['bug']
 assignees: []
-
 ---
 
 ## Summary
+
 What went wrong?
 
 ## Steps to reproduce
+
 1.
 2.
 3.
 
 ## Expected result
+
 What did you expect to happen?
 
 ## Actual result
+
 What happened instead?
 
 ## Environment
+
 - Extension version:
 - Browser + version: (Chrome/Edge/Brave/Vivaldi/Firefox)
 - OS:
@@ -32,6 +36,7 @@ What happened instead?
 - Other extensions that may affect YouTube: (ad blocker, sponsorblock, etc.)
 
 ## Diagnostics (optional but very helpful)
+
 - Screenshot / screen recording:
 - Console logs from the YouTube tab (DevTools -> Console):
 - Background logs:
@@ -39,4 +44,5 @@ What happened instead?
   - Firefox: `about:debugging#/runtime/this-firefox` -> Inspect
 
 ## Additional context
+
 Anything else that might matter (network conditions, country/language, first install vs update, etc.).

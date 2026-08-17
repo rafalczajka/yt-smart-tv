@@ -13,8 +13,10 @@
 </script>
 
 <div
-  id={id}
-  class={mini ? 'smart-tv-mini-guide ytd-mini-guide-renderer' : 'container ytd-guide-section-renderer'}
+  {id}
+  class={mini
+    ? 'smart-tv-mini-guide ytd-mini-guide-renderer'
+    : 'container ytd-guide-section-renderer'}
 >
   <button
     id="endpoint"

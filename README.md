@@ -130,7 +130,6 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
    <details>
    <summary><strong>Chromium</strong></summary>
-
    - Unzip `yt-smart-tv-*-chrome.zip`.
    - Open `chrome://extensions`.
    - Enable **Developer mode** (top-right).
@@ -140,7 +139,6 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
    <details>
    <summary><strong>Firefox</strong></summary>
-
    - Rename the file from `.zip` to `.xpi`.
    - Open [`about:addons`](about:addons) -> gear icon -> **Install Add-on From File...** -> select the `.xpi`.
    - **Note:** On stable Firefox, unsigned add-ons may be blocked. For permanent installs, use a signed build (AMO) or Firefox Developer Edition/Nightly (with signing disabled).
@@ -157,20 +155,24 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 ### Steps
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/rafalczajka/yt-smart-tv.git
    cd yt-smart-tv
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Build the extension:
+
    ```bash
    npm run build
    ```
+
    This creates production builds and ZIP packages in:
    - Chromium (production build): `dist/chrome-mv3/`
    - Firefox (production build): `dist/firefox-mv2/`
@@ -180,7 +182,6 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 4. Add the extension to your browser (choose one method):
    <details>
    <summary><strong>Chromium: Load unpacked</strong></summary>
-
    - Open [`chrome://extensions`](chrome://extensions).
    - Enable **Developer mode** (top-right).
    - Click **Load unpacked** and select the `dist/chrome-mv3/` folder.
@@ -189,7 +190,6 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
    <details>
    <summary><strong>Firefox: Load temporary add-on</strong></summary>
-
    - Open [`about:debugging#/runtime/this-firefox`](about:debugging#/runtime/this-firefox).
    - Click **Load Temporary Add-on...**
    - Select `dist/firefox-mv2/manifest.json`.
@@ -199,7 +199,6 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
    <details>
    <summary><strong>Firefox: Install from ZIP/XPI (persistent)</strong></summary>
-
    - Find the ZIP package: `dist/yt-smart-tv-*-firefox.zip`.
    - Rename the file from `.zip` to `.xpi`.
    - Open [`about:addons`](about:addons) -> gear icon -> **Install Add-on From File...** -> select the `.xpi`.

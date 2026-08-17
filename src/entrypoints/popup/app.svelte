@@ -28,12 +28,7 @@
   <Header size="sm" />
 
   <Section>
-    <Card
-      type="button"
-      title="Open YouTube"
-      onclick={handleYouTubeClick}
-      icon="external-link"
-    />
+    <Card type="button" title="Open YouTube" onclick={handleYouTubeClick} icon="external-link" />
 
     <Card
       type="button"

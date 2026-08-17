@@ -12,8 +12,8 @@
     disabled?: boolean;
     children?: Snippet;
   } & (
-    | { type: 'switch'; checked?: boolean; onclick?: never; icon?: never; }
-    | { type: 'button'; onclick: () => void; checked?: never; icon?: IconType; }
+    | { type: 'switch'; checked?: boolean; onclick?: never; icon?: never }
+    | { type: 'button'; onclick: () => void; checked?: never; icon?: IconType }
   );
 
   let {
@@ -42,7 +42,7 @@
   <label class="card" class:disabled>
     {@render content?.(title, description, children)}
     <div class="actions">
-      <Switch bind:checked disabled={disabled} />
+      <Switch bind:checked {disabled} />
     </div>
   </label>
 {:else if type === 'button'}

@@ -11,11 +11,6 @@
   const title = 'Smart TV';
 </script>
 
-<button
-  {...props}
-  class="ytp-button"
-  title={title}
-  aria-label={title}
->
+<button {...props} class="ytp-button" {title} aria-label={title}>
   <ExtensionIcon width="24" height="24" color="white" />
 </button>
