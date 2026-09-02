@@ -1,4 +1,4 @@
-import { mount } from 'svelte';
+import { mount, unmount } from 'svelte';
 
 import SmartTvButton from '~/components/content/smart-tv-button.svelte';
 import SmartTvPlayerButton from '~/components/content/smart-tv-player-button.svelte';
@@ -10,6 +10,8 @@ const SMART_TV_BUTTON_ID = 'smart-tv-button';
 const SMART_TV_MINI_BUTTON_ID = 'smart-tv-mini-button';
 const SMART_TV_PLAYER_BUTTON_ID = 'smart-tv-player-button';
 
+type MountedComponent = ReturnType<typeof mount>;
+
 const supportedOptionKeys = new Set<OptionKey>([
   'showGuideButton',
   'showMiniGuideButton',
@@ -19,6 +21,8 @@ const supportedOptionKeys = new Set<OptionKey>([
 let guideButtonRetry: RetryHandle | undefined;
 let miniGuideButtonRetry: RetryHandle | undefined;
 let playerButtonRetry: RetryHandle | undefined;
+
+const mountedComponents = new Map<string, MountedComponent>();
 
 /**
  * Content script entrypoint for regular YouTube pages (not `/tv`).
@@ -132,6 +136,14 @@ function stopPlayerButton(): void {
 }
 
 function removeById(id: string): void {
+  const component = mountedComponents.get(id);
+
+  if (component) {
+    mountedComponents.delete(id);
+    void unmount(component);
+    return;
+  }
+
   document.getElementById(id)?.remove();
 }
 
@@ -141,7 +153,7 @@ function addSmartTvButton(buttonId: string, target: Element, mini = false): bool
 
   const anchor = target.querySelector(':has(#endpoint[title*="shorts" i]) + *');
 
-  mount(SmartTvButton, {
+  const component = mount(SmartTvButton, {
     target,
     anchor: anchor ?? undefined,
     props: {
@@ -151,6 +163,7 @@ function addSmartTvButton(buttonId: string, target: Element, mini = false): bool
     }
   });
 
+  mountedComponents.set(buttonId, component);
   return true;
 }
 
@@ -174,7 +187,7 @@ function addSmartTvPlayerButton(): boolean {
     browser.runtime.sendMessage(messages.OPEN_SMART_TV_WITH_URI);
   };
 
-  mount(SmartTvPlayerButton, {
+  const component = mount(SmartTvPlayerButton, {
     target,
     anchor: anchor ?? undefined,
     props: {
@@ -183,5 +196,6 @@ function addSmartTvPlayerButton(): boolean {
     }
   });
 
+  mountedComponents.set(SMART_TV_PLAYER_BUTTON_ID, component);
   return true;
 }
