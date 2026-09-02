@@ -41,17 +41,19 @@
 
 <style lang="scss">
   .smart-tv-mini-guide {
+    --ytstv-mini-guide-hover-color: rgba(0, 0, 0, 0.05);
+
     border-radius: 10px;
 
     &:hover,
     &:focus {
-      background-color: var(--yt-spec-additive-background);
+      background-color: var(--ytstv-mini-guide-hover-color);
       outline: none;
     }
+  }
 
-    .title {
-      color: var(--yt-spec-text-primary);
-    }
+  :global(html[dark]) .smart-tv-mini-guide {
+    --ytstv-mini-guide-hover-color: rgba(255, 255, 255, 0.1);
   }
 
   .container {
