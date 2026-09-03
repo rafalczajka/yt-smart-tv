@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.8] - 2026-09-03
+
+### Fixed
+
+- Ensure injected buttons are cleanly removed when disabled.
+- Keep the mini sidebar button hover color consistent in light and dark themes.
+
 ## [1.0.7] - 2026-08-12
 
 ### Fixed
