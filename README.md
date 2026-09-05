@@ -1,6 +1,6 @@
 <h1 align="center">
   <sub><img src="assets/logo.svg" alt="YouTube Smart TV logo" height="32"></sub>
-  YouTube Smart TV - Browser Extension
+  YouTube Smart TV
 </h1>
 
 <div align="center">
@@ -32,7 +32,7 @@
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/github-mark-white.svg" width="48" />
         <source media="(prefers-color-scheme: light)" srcset="assets/github-mark.svg" width="48" />
-        <img src="assets/github-mark.svg" width="48" />
+        <img src="assets/github-mark.svg" alt="GitHub" width="48" />
       </picture>
     </td>
     <td><a href="https://github.com/rafalczajka/yt-smart-tv/releases/latest">Releases</a></td>
@@ -54,7 +54,7 @@
 
 > A lightweight browser extension that adds **Smart TV** controls directly to YouTube. It inserts buttons into the
 > **left sidebar** and **player controls** (next to the fullscreen button), so you can open **YouTube TV** from the
-> current page, keep the current video and timestamp, and control playback from your phone after pairing (TV code).
+> current page, keep the current video and timestamp when using the player button, and control playback from your phone after pairing (TV code).
 
 - ✨ [Features](#-features)
 - ✅ [Compatibility](#-compatibility)
@@ -72,7 +72,7 @@
 - One-click switch to **YouTube TV** (`https://www.youtube.com/tv`).
 - Buttons integrated into the YouTube interface (sidebar + player controls).
 - Player button opens TV mode **at the same video and timestamp**.
-- Options page to customize which buttons are shown and how TV mode opens (window/tab, fullscreen).
+- Options page to customize which buttons are shown and how TV mode opens (new tab or window, with optional fullscreen for new windows).
 
 ## ✅ Compatibility
 
@@ -84,7 +84,7 @@
 
 1. Open a regular YouTube page.
 2. Click **Smart TV** in the left menu or the TV icon near the fullscreen button.
-3. YouTube opens in TV mode (in a new tab or window, depending on your options). Press `Esc` to leave, or hold `Esc` for 3 seconds as a fallback.
+3. YouTube opens in TV mode (in a new tab or window, depending on your options). Press `Esc` until you reach the exit screen, or hold `Esc` for 3 seconds to close TV mode directly.
 
 ## 📱 Link your phone with a TV code
 
@@ -141,9 +141,10 @@ For Google Chrome and other Chromium-based browsers, install the published versi
    <details>
    <summary><strong>Firefox</strong></summary>
 
-   - Rename the file from `.zip` to `.xpi`.
-   - Open [`about:addons`](about:addons) -> gear icon -> **Install Add-on From File...** -> select the `.xpi`.
-   - **Note:** On stable Firefox, unsigned add-ons may be blocked. For permanent installs, use a signed build (AMO) or Firefox Developer Edition/Nightly (with signing disabled).
+   - Unzip `yt-smart-tv-*-firefox.zip`.
+   - Open `about:debugging#/runtime/this-firefox`.
+   - Click **Load Temporary Add-on...** and select `manifest.json` in the extracted folder.
+   - **Note:** This installation lasts until Firefox restarts. Permanent installation in standard Firefox requires a Mozilla-signed build.
 
    </details>
 
@@ -151,7 +152,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
 ### Requirements
 
-- **Node.js** 20+
+- **Node.js** 22.22.1+ (22.x) or 24.x, with npm
 - A compatible browser (see [Compatibility](#-compatibility))
 
 ### Steps
@@ -166,7 +167,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 2. Install dependencies:
 
    ```bash
-   npm install
+   npm ci
    ```
 
 3. Build the extension:
@@ -207,7 +208,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
    - Find the ZIP package: `dist/yt-smart-tv-*-firefox.zip`.
    - Rename the file from `.zip` to `.xpi`.
    - Open [`about:addons`](about:addons) -> gear icon -> **Install Add-on From File...** -> select the `.xpi`.
-   - **Note:** On stable Firefox, unsigned add-ons may be blocked. For permanent installs, use a signed build (AMO) or Firefox Developer Edition/Nightly (with signing disabled).
+   - **Note:** Standard Firefox requires a Mozilla-signed build for permanent installation; renaming `.zip` to `.xpi` does not sign it. Unsigned builds require Firefox Developer Edition/Nightly with signing disabled, or temporary installation as described above.
 
    </details>
 
