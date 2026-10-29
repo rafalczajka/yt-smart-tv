@@ -32,10 +32,10 @@
     "lint-staged": "17.6.0",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "sass": "1.105.2",
-    "svelte": "5.57.2",
-    "typescript-eslint": "8.72.0",
+    "sass": "1.106.1",
+    "svelte": "5.57.3",
+    "typescript-eslint": "8.72.1",
     "vitest": "5.0.5",
-    "wxt": "0.21.4"
+    "wxt": "0.21.5"
   }
 }
