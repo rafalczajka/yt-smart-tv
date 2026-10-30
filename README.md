@@ -52,9 +52,11 @@
   </tr>
 </table>
 
-> A lightweight browser extension that adds **Smart TV** controls directly to YouTube. It inserts buttons into the
-> **left sidebar** and **player controls** (next to the fullscreen button), so you can open **YouTube TV** from the
-> current page, keep the current video and timestamp when using the player button, and control playback from your phone after pairing (TV code).
+A browser extension that opens **YouTube's TV interface** directly from the sidebar or player controls.
+Use the player button to continue the current video at the same playback position, then pair your phone
+with YouTube using a TV code to control playback remotely.
+
+---
 
 - ✨ [Features](#-features)
 - ✅ [Compatibility](#-compatibility)
@@ -64,15 +66,17 @@
 - 📦 [Installation (from release)](#-installation-from-release)
 - 📦 [Installation (from source)](#-installation-from-source)
 - 🔧 [Development](#-development)
+- 💬 [Support](#-support)
 
 ---
 
 ## ✨ Features
 
-- One-click switch to **YouTube TV** (`https://www.youtube.com/tv`).
-- Buttons integrated into the YouTube interface (sidebar + player controls).
+- One-click access to **YouTube's TV interface** (`https://www.youtube.com/tv`).
+- Buttons integrated into the full and collapsed sidebars and player controls.
 - Player button opens TV mode **at the same video and timestamp**.
 - Options page to customize which buttons are shown and how TV mode opens (new tab or window, with optional fullscreen for new windows).
+- Toolbar popup with shortcuts to YouTube, TV mode, and extension settings.
 
 ## ✅ Compatibility
 
@@ -85,6 +89,8 @@
 1. Open a regular YouTube page.
 2. Click **Smart TV** in the left menu or the TV icon near the fullscreen button.
 3. YouTube opens in TV mode (in a new tab or window, depending on your options). Press `Esc` until you reach the exit screen, or hold `Esc` for 3 seconds to close TV mode directly.
+
+To customize button visibility and launch behavior, click the extension's toolbar icon and select **Open extension settings**.
 
 ## 📱 Link your phone with a TV code
 
@@ -100,13 +106,15 @@ You can pair your phone with YouTube running in TV mode and use it as a remote c
 
 ## 🤫 Incognito / Private mode
 
-To use the extension from an incognito/private window (and open Smart TV in that mode), you need to enable it in the browser settings.
+To use the extension in an incognito/private window, allow it to run there in your browser's extension settings.
 
 ### Chromium (Incognito)
 
 1. Open `chrome://extensions`.
 2. Find **YouTube Smart TV** → **Details**.
 3. Enable **Allow in Incognito**.
+
+For other Chromium-based browsers, use the equivalent option on their extensions page.
 
 ### Firefox (Private Windows)
 
@@ -177,16 +185,18 @@ For Google Chrome and other Chromium-based browsers, install the published versi
    ```
 
    This creates production builds and ZIP packages in:
+
    - Chromium (production build): `dist/chrome-mv3/`
    - Firefox (production build): `dist/firefox-mv2/`
    - Chromium (ZIP package): `dist/yt-smart-tv-*-chrome.zip`
    - Firefox (ZIP package): `dist/yt-smart-tv-*-firefox.zip`
 
 4. Add the extension to your browser (choose one method):
+
    <details>
    <summary><strong>Chromium: Load unpacked</strong></summary>
 
-   - Open [`chrome://extensions`](chrome://extensions).
+   - Open `chrome://extensions` (or your browser's equivalent extensions page).
    - Enable **Developer mode** (top-right).
    - Click **Load unpacked** and select the `dist/chrome-mv3/` folder.
 
@@ -195,7 +205,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
    <details>
    <summary><strong>Firefox: Load temporary add-on</strong></summary>
 
-   - Open [`about:debugging#/runtime/this-firefox`](about:debugging#/runtime/this-firefox).
+   - Open `about:debugging#/runtime/this-firefox`.
    - Click **Load Temporary Add-on...**
    - Select `dist/firefox-mv2/manifest.json`.
    - **Note:** Temporary add-ons are removed when Firefox is closed/restarted (they are intended for development).
@@ -207,7 +217,7 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
    - Find the ZIP package: `dist/yt-smart-tv-*-firefox.zip`.
    - Rename the file from `.zip` to `.xpi`.
-   - Open [`about:addons`](about:addons) -> gear icon -> **Install Add-on From File...** -> select the `.xpi`.
+   - Open `about:addons` -> gear icon -> **Install Add-on From File...** -> select the `.xpi`.
    - **Note:** Standard Firefox requires a Mozilla-signed build for permanent installation; renaming `.zip` to `.xpi` does not sign it. Unsigned builds require Firefox Developer Edition/Nightly with signing disabled, or temporary installation as described above.
 
    </details>
@@ -218,3 +228,20 @@ Run the extension in dev mode:
 
 - Chromium: `npm run dev:chrome`
 - Firefox: `npm run dev:firefox`
+
+To build and package only one browser version, use `npm run build:chrome` or `npm run build:firefox`.
+
+Before submitting changes, run:
+
+```bash
+npm test
+npm run lint
+npm run typecheck
+npm run format:check
+```
+
+## 💬 Support
+
+Report bugs or suggest features through [GitHub Issues](https://github.com/rafalczajka/yt-smart-tv/issues/new/choose). For bug reports, include your browser and extension versions, steps to reproduce, and any relevant error messages.
+
+See the [Changelog](CHANGELOG.md) for release notes and the [Privacy Policy](PRIVACY.md) for details about data handling and permissions.
