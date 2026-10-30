@@ -113,6 +113,7 @@ function startMiniGuideButton(): void {
 function startPlayerButton(): void {
   playerButtonRetry?.cancel();
   playerButtonRetry = retryUntil(addSmartTvPlayerButton, {
+    retryIndefinitely: true,
     observerRoot: document.querySelector('#player') ?? document.body
   });
 }
