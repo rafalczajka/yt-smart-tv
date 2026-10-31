@@ -8,8 +8,14 @@ import { getYouTubeTvUrl } from './urls';
  * @param uri - Optional relative URI to open (e.g. `/watch?v=...` or `?v=...`).
  * @param options - Behavior options controlling window/tab mode.
  * @param incognito - Whether to open the window in incognito/private mode (only applies to window mode).
+ * @param windowId - Source window to use when opening a new tab.
  */
-export async function openYouTubeTv(uri = '', options: BehaviorOptions, incognito = false) {
+export async function openYouTubeTv(
+  uri = '',
+  options: BehaviorOptions,
+  incognito = false,
+  windowId?: number
+) {
   const { openInNewWindow, openInFullscreen } = options;
 
   const openYouTubeTvInNewWindow = async () =>
@@ -23,7 +29,8 @@ export async function openYouTubeTv(uri = '', options: BehaviorOptions, incognit
   const openYouTubeTvInNewTab = async () =>
     await browser.tabs.create({
       url: getYouTubeTvUrl(uri),
-      active: true
+      active: true,
+      windowId
     });
 
   if (openInNewWindow) {

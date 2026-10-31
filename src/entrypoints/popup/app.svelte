@@ -12,7 +12,7 @@
     const options = await getOptions();
     const currentWindow = await browser.windows.getCurrent();
     const incognito = currentWindow?.incognito ?? false;
-    await openYouTubeTv('', options, incognito);
+    await openYouTubeTv('', options, incognito, currentWindow?.id);
     window.close();
   };
 

@@ -20,18 +20,19 @@ export default defineBackground(() => {
 
   browser.runtime.onMessage.addListener(async (message, sender) => {
     const isIncognito = sender.tab?.incognito ?? false;
+    const windowId = sender.tab?.windowId;
 
     switch (message) {
       case messages.OPEN_SMART_TV: {
         const options = await getOptions();
-        await openYouTubeTv('', options, isIncognito);
+        await openYouTubeTv('', options, isIncognito, windowId);
         break;
       }
 
       case messages.OPEN_SMART_TV_WITH_URI: {
         const uri = getYouTubeRelativeUri(sender.tab?.url);
         const options = await getOptions();
-        await openYouTubeTv(uri, options, isIncognito);
+        await openYouTubeTv(uri, options, isIncognito, windowId);
         break;
       }
 
