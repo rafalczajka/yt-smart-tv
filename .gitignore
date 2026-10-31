@@ -1,5 +1,3 @@
-TODOs.md
-
 # Logs
 logs
 *.log
@@ -28,3 +26,6 @@ web-ext.config.ts
 *.njsproj
 *.sln
 *.sw?
+
+TODOs.md
+assets/store/*.ps1

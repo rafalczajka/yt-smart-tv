@@ -42,5 +42,9 @@
     "typescript-eslint": "8.72.1",
     "vitest": "5.0.5",
     "wxt": "0.21.5"
+  },
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
   }
 }

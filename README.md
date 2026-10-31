@@ -160,7 +160,8 @@ For Google Chrome and other Chromium-based browsers, install the published versi
 
 ### Requirements
 
-- **Node.js** 22.22.1+ (22.x) or 24.x, with npm
+- **Node.js** 24+
+- **npm** 11+
 - A compatible browser (see [Compatibility](#-compatibility))
 
 ### Steps
