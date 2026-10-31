@@ -2,49 +2,36 @@
   import { onMount } from 'svelte';
 
   import { Card, Footer, Header, Section } from '~/components/ui';
-  import { emptyOptions, getOptions, type Options, setOptions } from '~/options';
-
-  const SAVE_DEBOUNCE_MS = 200;
+  import { emptyOptions, getOptions, optionKeys, type Options, setOptions } from '~/options';
 
   let options = $state<Options>({ ...emptyOptions });
   let hydrated = $state(false);
-  let timeout: ReturnType<typeof setTimeout> | undefined;
-  let pendingSave = false;
-  let latestSnapshot: Options | null = null;
+  let previousOptions: Options = { ...emptyOptions };
 
   onMount(() => {
     (async () => {
       const stored = await getOptions();
+      previousOptions = stored;
       Object.assign(options, stored);
       hydrated = true;
     })();
-
-    return () => {
-      if (timeout) {
-        clearTimeout(timeout);
-        timeout = undefined;
-      }
-
-      if (pendingSave && latestSnapshot) {
-        pendingSave = false;
-        void setOptions(latestSnapshot);
-      }
-    };
   });
 
   $effect(() => {
     if (!hydrated) return;
 
-    const snapshot: Options = { ...options };
-    latestSnapshot = snapshot;
-    pendingSave = true;
+    const changes: Partial<Options> = {};
 
-    // debounce
-    clearTimeout(timeout);
-    timeout = setTimeout(async () => {
-      pendingSave = false;
-      await setOptions(snapshot);
-    }, SAVE_DEBOUNCE_MS);
+    for (const key of optionKeys) {
+      if (options[key] !== previousOptions[key]) {
+        changes[key] = options[key];
+      }
+    }
+
+    if (Object.keys(changes).length === 0) return;
+
+    previousOptions = { ...options };
+    void setOptions(changes);
   });
 </script>
 
