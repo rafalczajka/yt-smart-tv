@@ -1,4 +1,7 @@
 {
   "extends": "./.wxt/tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": true
+  },
   "exclude": ["node_modules", "dist"]
 }

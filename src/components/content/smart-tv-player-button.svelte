@@ -1,10 +1,10 @@
 <script lang="ts">
   import ExtensionIcon from '~/components/icons/extension.svelte';
 
-  type Props = {
+  interface Props {
     id?: string;
     onclick?: () => void;
-  };
+  }
 
   let props: Props = $props();
 

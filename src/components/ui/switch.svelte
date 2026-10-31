@@ -1,8 +1,8 @@
 <script lang="ts">
-  type Props = {
+  interface Props {
     checked?: boolean;
     disabled?: boolean;
-  };
+  }
 
   let { checked = $bindable(false), disabled = false }: Props = $props();
 </script>

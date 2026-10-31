@@ -10,30 +10,35 @@
     "clean": "wxt clean",
     "test": "vitest run tests",
     "lint-staged": "lint-staged",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .ts,.svelte",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "typecheck": "wxt prepare && tsc -p .wxt/tsconfig.json",
+    "typecheck": "wxt prepare && svelte-check --tsconfig ./tsconfig.json",
     "postinstall": "wxt prepare && git config core.hooksPath .githooks"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.{ts,svelte}": [
       "prettier --write",
       "eslint"
     ]
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
+    "@sveltejs/vite-plugin-svelte": "6.2.1",
     "@tsconfig/svelte": "5.0.8",
     "@wxt-dev/module-svelte": "2.0.5",
     "eslint": "10.13.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-simple-import-sort": "14.0.0",
+    "eslint-plugin-svelte": "3.23.1",
+    "globals": "17.13.0",
     "lint-staged": "17.6.0",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
     "sass": "1.106.1",
     "svelte": "5.57.3",
+    "svelte-check": "4.7.7",
+    "typescript": "6.0.3",
     "typescript-eslint": "8.72.1",
     "vitest": "5.0.5",
     "wxt": "0.21.5"

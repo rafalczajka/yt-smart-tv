@@ -1,9 +1,9 @@
 <script lang="ts">
-  type Props = {
+  interface Props {
     width?: string | number | null;
     height?: string | number | null;
     color?: string | null;
-  };
+  }
 
   let { width, height, color = 'currentColor' }: Props = $props();
 </script>

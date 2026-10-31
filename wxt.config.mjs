@@ -1,5 +1,7 @@
 import { defineConfig } from 'wxt';
 
+import svelteConfig from './svelte.config.mjs';
+
 const geckoSettings = {
   id: 'yt-smart-tv@rafalczajka.github.io',
   data_collection_permissions: {
@@ -11,6 +13,9 @@ export default defineConfig({
   srcDir: 'src',
   outDir: 'dist',
   modules: ['@wxt-dev/module-svelte'],
+  svelte: {
+    vite: svelteConfig
+  },
   imports: {
     dirs: []
   },

@@ -2,11 +2,11 @@
   import ExtensionIcon from '~/components/icons/extension.svelte';
   import { getExtensionName } from '~/lib/extension-info';
 
-  type Props = {
+  interface Props {
     title?: string;
     subtitle?: string;
     size?: 'md' | 'sm';
-  };
+  }
 
   let { title = getExtensionName(), subtitle, size = 'md' }: Props = $props();
   let iconSize = $derived(size === 'sm' ? 22 : 28);

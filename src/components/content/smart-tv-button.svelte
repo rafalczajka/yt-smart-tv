@@ -1,12 +1,13 @@
 <script lang="ts">
   import ExtensionIcon from '~/components/icons/extension.svelte';
+
   import GuideButton from './guide-button.svelte';
 
-  type Props = {
+  interface Props {
     id?: string;
     mini?: boolean;
     onclick?: () => void;
-  };
+  }
 
   let props: Props = $props();
 </script>
