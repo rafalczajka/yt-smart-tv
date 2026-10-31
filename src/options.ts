@@ -21,27 +21,6 @@ export interface BehaviorOptions {
 export type Options = UiOptions & BehaviorOptions;
 
 /**
- * Lazy, cached options reader for extension contexts.
- *
- * @remarks
- * Values are cached in memory and invalidated on `browser.storage.onChanged` for the `sync` area.
- */
-export class LazyOptions {
-  private options?: Options;
-
-  constructor() {
-    browser.storage.onChanged.addListener((_, areaName) => {
-      if (areaName !== 'sync') return;
-      this.options = undefined; // force reload
-    });
-  }
-
-  async get(): Promise<Options> {
-    return (this.options ??= await getOptions());
-  }
-}
-
-/**
  * Default options used when nothing is stored yet.
  */
 export const defaultOptions: Options = {

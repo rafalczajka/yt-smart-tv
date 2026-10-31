@@ -1,4 +1,4 @@
-import { LazyOptions } from '~/options';
+import { getOptions } from '~/options';
 import {
   getUserAgentUpdateRuleOptions,
   getYouTubeRelativeUri,
@@ -14,8 +14,6 @@ import {
  * - Handles runtime messages from content scripts (open/close Smart TV window).
  */
 export default defineBackground(() => {
-  const lazyOptions = new LazyOptions();
-
   browser.runtime.onInstalled.addListener(async () => {
     await browser.declarativeNetRequest.updateDynamicRules(getUserAgentUpdateRuleOptions());
   });
@@ -25,14 +23,14 @@ export default defineBackground(() => {
 
     switch (message) {
       case messages.OPEN_SMART_TV: {
-        const options = await lazyOptions.get();
+        const options = await getOptions();
         await openYouTubeTv('', options, isIncognito);
         break;
       }
 
       case messages.OPEN_SMART_TV_WITH_URI: {
         const uri = getYouTubeRelativeUri(sender.tab?.url);
-        const options = await lazyOptions.get();
+        const options = await getOptions();
         await openYouTubeTv(uri, options, isIncognito);
         break;
       }

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Card, Footer, Header, Section } from '~/components/ui';
-  import { LazyOptions } from '~/options';
+  import { getOptions } from '~/options';
   import { openOptions, openYouTube, openYouTubeTv } from '~/tv';
 
   const handleYouTubeClick = async () => {
@@ -9,7 +9,7 @@
   };
 
   const handleYouTubeTvClick = async () => {
-    const options = await lazyOptions.get();
+    const options = await getOptions();
     const currentWindow = await browser.windows.getCurrent();
     const incognito = currentWindow?.incognito ?? false;
     await openYouTubeTv('', options, incognito);
@@ -20,8 +20,6 @@
     await openOptions();
     window.close();
   };
-
-  const lazyOptions = new LazyOptions();
 </script>
 
 <main>
