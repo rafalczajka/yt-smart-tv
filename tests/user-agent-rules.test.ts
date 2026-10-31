@@ -22,7 +22,7 @@ describe('dynamic-rules', () => {
       id,
       priority: 1,
       condition: {
-        urlFilter: 'youtube.com/tv',
+        urlFilter: '||youtube.com/tv^',
         resourceTypes: ['main_frame']
       },
       action: {

@@ -2,7 +2,7 @@ import agents from './user-agents.json';
 
 type UpdateRuleOptions = Browser.declarativeNetRequest.UpdateRuleOptions;
 
-const YOUTUBE_TV_FILTER = 'youtube.com/tv';
+const YOUTUBE_TV_FILTER = '||youtube.com/tv^';
 const DEFAULT_USER_AGENT = agents['user-agents'].default;
 
 /**
