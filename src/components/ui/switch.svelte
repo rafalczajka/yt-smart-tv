@@ -33,15 +33,15 @@
       border: 0;
 
       &:checked + .track {
-        background: var(--ytstv-accent, #3b82f6);
+        background: var(--ytstv-accent);
 
         .thumb {
-          transform: translateX(14px);
+          transform: translateX(16px);
         }
       }
 
       &:focus-visible + .track {
-        outline: 2px solid var(--ytstv-accent, #3b82f6);
+        outline: 2px solid var(--ytstv-accent);
         outline-offset: 2px;
       }
 
@@ -52,22 +52,23 @@
     }
 
     .track {
-      width: 34px;
-      height: 20px;
+      width: 38px;
+      height: 22px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
+      background: #45454c;
+      border: 1px solid transparent;
       position: relative;
-      transition: background-color 200ms ease-in-out;
+      transition: background-color var(--ytstv-transition-duration) ease-in-out;
 
       .thumb {
         width: 16px;
         height: 16px;
         border-radius: 999px;
-        background: var(--ytstv-fg, #f1f1f1);
+        background: #fff;
         position: absolute;
         top: 2px;
         left: 2px;
-        transition: transform 200ms ease-in-out;
+        transition: transform var(--ytstv-transition-duration) ease-in-out;
       }
     }
   }

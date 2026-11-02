@@ -1,34 +1,26 @@
 <script lang="ts">
   import { type Snippet } from 'svelte';
 
-  import Icon from './icon.svelte';
   import Switch from './switch.svelte';
 
-  type IconType = 'external-link' | 'settings';
-
-  type Props = {
+  interface Props {
     title: string;
     description?: string;
     disabled?: boolean;
     children?: Snippet;
-  } & (
-    | { type: 'switch'; checked?: boolean; onclick?: never; icon?: never }
-    | { type: 'button'; onclick: () => void; checked?: never; icon?: IconType }
-  );
+    checked?: boolean;
+  }
 
   let {
     title,
     description,
     children,
     disabled = false,
-    type,
-    checked = $bindable(false),
-    onclick,
-    icon
+    checked = $bindable(false)
   }: Props = $props();
 </script>
 
-{#snippet content(title: string, description?: string, children?: Snippet)}
+<label class="card" class:disabled>
   <div class="content">
     <div class="title">{title}</div>
     {#if description}
@@ -36,40 +28,27 @@
     {/if}
     {@render children?.()}
   </div>
-{/snippet}
-
-{#if type === 'switch'}
-  <label class="card" class:disabled>
-    {@render content?.(title, description, children)}
-    <div class="actions">
-      <Switch bind:checked {disabled} />
-    </div>
-  </label>
-{:else if type === 'button'}
-  <button class="card" class:disabled {onclick}>
-    {@render content?.(title, description, children)}
-    {#if icon}
-      <div class="actions">
-        <Icon type={icon} width="16" height="16" />
-      </div>
-    {/if}
-  </button>
-{/if}
+  <div class="actions">
+    <Switch bind:checked {disabled} />
+  </div>
+</label>
 
 <style lang="scss">
   .card {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 12px 14px;
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+    min-height: 76px;
+    padding: 14px 16px;
     border: 1px solid var(--ytstv-border);
-    border-radius: 12px;
+    border-radius: 8px;
+    text-align: left;
     cursor: pointer;
     background: var(--ytstv-surface);
-    transition:
-      background-color var(--ytstv-transition-duration) ease-in-out,
-      border-color var(--ytstv-transition-duration) ease-in-out,
-      box-shadow var(--ytstv-transition-duration) ease-in-out;
+    transition: background-color var(--ytstv-transition-duration) ease-in-out;
 
     &:not(.disabled):hover {
       background: var(--ytstv-surface-hover);
@@ -80,14 +59,11 @@
       cursor: not-allowed;
     }
 
-    &:focus-visible {
-      outline: 2px solid var(--ytstv-accent);
-      outline-offset: 2px;
-    }
-
     .content {
       display: grid;
       gap: 4px;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .title {
@@ -96,18 +72,14 @@
 
     .description {
       color: var(--ytstv-muted);
-      font-size: 12px;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .actions {
       display: flex;
       align-items: center;
-      color: var(--ytstv-muted);
-      transition: color var(--ytstv-transition-duration) ease-in-out;
-    }
-
-    &:hover .actions {
-      color: var(--ytstv-fg);
+      flex-shrink: 0;
     }
   }
 </style>

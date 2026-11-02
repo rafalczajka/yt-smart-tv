@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+
   import ExtensionIcon from '~/components/icons/extension.svelte';
   import { getExtensionName } from '~/lib/extension-info';
 
@@ -6,19 +8,24 @@
     title?: string;
     subtitle?: string;
     size?: 'md' | 'sm';
+    children?: Snippet;
   }
 
-  let { title = getExtensionName(), subtitle, size = 'md' }: Props = $props();
-  let iconSize = $derived(size === 'sm' ? 22 : 28);
+  let { title = getExtensionName(), subtitle, size = 'md', children }: Props = $props();
 </script>
 
 <header class="header" class:sm={size === 'sm'}>
-  <div class="logo">
-    <ExtensionIcon width={iconSize} height={iconSize} color="#FF0000" />
+  <div class="identity">
+    <span class="logo" aria-hidden="true">
+      <ExtensionIcon width="1.25em" height="1em" color="#f04452" />
+    </span>
     <h1 class="title">{title}</h1>
   </div>
   {#if subtitle}
     <p class="subtitle">{subtitle}</p>
+  {/if}
+  {#if children}
+    <div class="actions">{@render children()}</div>
   {/if}
 </header>
 
@@ -26,35 +33,47 @@
   .header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 6px;
+    text-align: center;
 
     &.sm {
-      .logo {
-        gap: 10px;
-      }
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 12px;
+      text-align: left;
 
-      .title {
-        font-size: 20px;
+      .identity {
+        font-size: 17px;
       }
     }
   }
 
-  .logo {
+  .identity {
     display: flex;
     align-items: center;
     gap: 12px;
+    min-width: 0;
+    font-size: 22px;
+  }
+
+  .logo,
+  .actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
   }
 
   .subtitle {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 13px;
     color: var(--ytstv-muted);
-    text-transform: uppercase;
   }
 
   .title {
-    font-size: 24px;
-    font-weight: 700;
+    min-width: 0;
+    font-size: inherit;
+    line-height: 1.35;
+    font-weight: 600;
+    overflow-wrap: anywhere;
   }
 </style>

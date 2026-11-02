@@ -40,7 +40,6 @@
 
   <Section title="Launch controls">
     <Card
-      type="switch"
       title="Sidebar shortcut"
       description="Show a Smart TV shortcut in YouTube's sidebar."
       bind:checked={options.showGuideButton}
@@ -48,7 +47,6 @@
     />
 
     <Card
-      type="switch"
       title="Mini sidebar shortcut"
       description="Show a Smart TV shortcut in YouTube's collapsed sidebar."
       bind:checked={options.showMiniGuideButton}
@@ -56,7 +54,6 @@
     />
 
     <Card
-      type="switch"
       title="Player button"
       description="Show a Smart TV button next to the player's fullscreen control."
       bind:checked={options.showPlayerButton}
@@ -66,7 +63,6 @@
 
   <Section title="Launch behavior">
     <Card
-      type="switch"
       title="Open in a new window"
       description="Open TV mode in a separate window instead of a new tab."
       bind:checked={options.openInNewWindow}
@@ -75,7 +71,6 @@
 
     {#if options.openInNewWindow}
       <Card
-        type="switch"
         title="Open in full screen"
         description="Open the TV mode window in full-screen mode."
         bind:checked={options.openInFullscreen}
@@ -83,7 +78,6 @@
       />
     {:else}
       <Card
-        type="switch"
         title="Open in full screen"
         description="Open the TV mode window in full-screen mode."
         checked={false}
@@ -101,13 +95,14 @@
   main {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    max-width: 600px;
+    gap: 28px;
+    width: 100%;
+    max-width: 640px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 40px 24px 24px;
 
-    @media (max-width: 680px) {
-      padding: 40px 12px;
+    @media (max-width: 480px) {
+      padding: 28px 16px 20px;
     }
   }
 

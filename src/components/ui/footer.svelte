@@ -1,5 +1,7 @@
 <script lang="ts">
   import { getExtensionVersion } from '~/lib/extension-info';
+
+  const version = getExtensionVersion();
 </script>
 
 <footer class="footer">
@@ -7,48 +9,41 @@
     <a href="https://github.com/rafalczajka/yt-smart-tv" target="_blank" rel="noreferrer">
       Source code
     </a>
-    <span class="sep" aria-hidden="true">·</span>
     <a
-      href="https://github.com/rafalczajka/yt-smart-tv/issues/new?template=bug_report.md"
+      href="https://github.com/rafalczajka/yt-smart-tv/issues/new/choose"
       target="_blank"
       rel="noreferrer"
     >
-      Report bug
+      Support
     </a>
-    <span class="sep" aria-hidden="true">·</span>
     <a
-      href="https://github.com/rafalczajka/yt-smart-tv/issues/new?template=feature_request.md"
+      href={`https://github.com/rafalczajka/yt-smart-tv/releases/tag/v${version}`}
       target="_blank"
       rel="noreferrer"
     >
-      Feature request
+      v{version}
     </a>
   </nav>
-  <span class="version">v{getExtensionVersion()}</span>
 </footer>
 
 <style lang="scss">
   .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    justify-content: center;
     color: var(--ytstv-muted);
     font-size: 12px;
-    letter-spacing: 0.02em;
   }
 
   .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px;
-    line-height: 1.2;
+    gap: 8px 16px;
+    min-width: 0;
+    line-height: 1.5;
   }
 
   a {
     color: var(--ytstv-muted);
+    white-space: nowrap;
 
     &:hover {
       color: var(--ytstv-fg);
@@ -57,12 +52,7 @@
     &:focus-visible {
       outline: 2px solid var(--ytstv-accent);
       outline-offset: 2px;
-      border-radius: 6px;
+      border-radius: 2px;
     }
-  }
-
-  .sep {
-    opacity: 0.8;
-    pointer-events: none;
   }
 </style>

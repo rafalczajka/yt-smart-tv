@@ -1,7 +1,11 @@
 <script lang="ts">
-  import { Card, Footer, Header, Section } from '~/components/ui';
+  import ExtensionIcon from '~/components/icons/extension.svelte';
+  import ExternalLinkIcon from '~/components/icons/external-link.svelte';
+  import { Button, Footer, Header } from '~/components/ui';
   import { getOptions } from '~/options';
-  import { openOptions, openYouTube, openYouTubeTv } from '~/tv';
+  import { openYouTube, openYouTubeTv } from '~/tv';
+
+  import SettingsButton from './settings-button.svelte';
 
   const handleYouTubeClick = async () => {
     await openYouTube();
@@ -15,43 +19,40 @@
     await openYouTubeTv('', options, incognito, currentWindow?.id);
     window.close();
   };
-
-  const handleOptionsClick = async () => {
-    await openOptions();
-    window.close();
-  };
 </script>
 
 <main>
-  <Header size="sm" />
+  <Header size="sm">
+    <SettingsButton />
+  </Header>
 
-  <Section>
-    <Card type="button" title="Open YouTube" onclick={handleYouTubeClick} icon="external-link" />
-
-    <Card
-      type="button"
-      title="Open YouTube TV"
-      onclick={handleYouTubeTvClick}
-      icon="external-link"
-    />
-
-    <Card
-      type="button"
-      title="Open extension settings"
-      onclick={handleOptionsClick}
-      icon="settings"
-    />
-  </Section>
+  <div class="actions">
+    <Button variant="primary" onclick={handleYouTubeTvClick}>
+      {#snippet iconBefore()}<ExtensionIcon />{/snippet}
+      Open TV mode
+    </Button>
+    <Button variant="secondary" onclick={handleYouTubeClick}>
+      Open YouTube
+      {#snippet iconAfter()}<ExternalLinkIcon />{/snippet}
+    </Button>
+  </div>
 
   <Footer />
 </main>
 
 <style lang="scss">
+  :global(body) {
+    width: 340px;
+  }
+
   main {
-    min-width: 340px;
-    padding: 18px 12px 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    padding: 16px;
+    display: grid;
+    gap: 18px;
+  }
+
+  .actions {
+    display: grid;
+    gap: 8px;
   }
 </style>

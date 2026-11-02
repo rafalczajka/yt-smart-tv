@@ -21,19 +21,17 @@
 <style lang="scss">
   .section {
     display: grid;
-    gap: 8px;
+    gap: 12px;
   }
 
   .title {
     margin: 0;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--ytstv-muted);
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .grid {
     display: grid;
-    gap: 12px;
+    gap: 8px;
   }
 </style>

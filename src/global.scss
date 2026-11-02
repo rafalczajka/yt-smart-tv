@@ -1,14 +1,16 @@
 :root {
   color-scheme: dark;
 
-  --ytstv-bg: #0f0f0f;
-  --ytstv-surface: #181818;
-  --ytstv-surface-hover: #1f1f1f;
-  --ytstv-border: rgba(255, 255, 255, 0.1);
-  --ytstv-fg: #f1f1f1;
-  --ytstv-muted: #aaa;
-  --ytstv-accent: #3b82f6;
-  --ytstv-transition-duration: 200ms;
+  --ytstv-bg: #141414;
+  --ytstv-surface: #1c1c1e;
+  --ytstv-surface-hover: #252527;
+  --ytstv-border: #343437;
+  --ytstv-fg: #f4f4f5;
+  --ytstv-muted: #a4a4ac;
+  --ytstv-accent: #78a8ff;
+  --ytstv-action: #cc293b;
+  --ytstv-action-hover: #df3043;
+  --ytstv-transition-duration: 150ms;
 }
 
 html {
@@ -33,6 +35,16 @@ body {
   background: var(--ytstv-bg);
   margin: 0;
   padding: 0;
+  letter-spacing: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
 }
 
 a {
@@ -47,4 +59,10 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ytstv-transition-duration: 0ms;
+  }
 }
