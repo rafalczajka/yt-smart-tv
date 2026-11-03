@@ -38,7 +38,6 @@
     justify-content: center;
     gap: 8px 16px;
     min-width: 0;
-    line-height: 1.5;
   }
 
   a {

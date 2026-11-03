@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     text-align: center;
 
     &.sm {
@@ -44,7 +44,7 @@
       text-align: left;
 
       .identity {
-        font-size: 17px;
+        font-size: 18px;
       }
     }
   }
@@ -65,14 +65,13 @@
   }
 
   .subtitle {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 600;
     color: var(--ytstv-muted);
   }
 
   .title {
-    min-width: 0;
     font-size: inherit;
-    line-height: 1.35;
     font-weight: 600;
     overflow-wrap: anywhere;
   }

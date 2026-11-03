@@ -35,14 +35,12 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-width: 0;
     width: 100%;
     min-height: 44px;
-    padding: 10px 14px;
+    padding: 12px 16px;
     border: 1px solid var(--ytstv-border);
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
-    line-height: 1.4;
     cursor: pointer;
     transition:
       background-color var(--ytstv-transition-duration) ease-in-out,
@@ -50,7 +48,7 @@
 
     &:focus-visible {
       outline: 2px solid var(--ytstv-accent);
-      outline-offset: 3px;
+      outline-offset: 4px;
     }
 
     &:disabled {
@@ -60,14 +58,14 @@
   }
 
   .primary {
-    min-height: 48px;
     border-color: var(--ytstv-action);
     background: var(--ytstv-action);
-    color: #fff;
+    color: var(--ytstv-fg);
 
     &:not(:disabled):hover {
       border-color: var(--ytstv-action-hover);
       background: var(--ytstv-action-hover);
+      color: #fff;
     }
   }
 

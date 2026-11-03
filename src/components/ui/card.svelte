@@ -42,7 +42,7 @@
     width: 100%;
     min-width: 0;
     min-height: 76px;
-    padding: 14px 16px;
+    padding: 12px 16px;
     border: 1px solid var(--ytstv-border);
     border-radius: 8px;
     text-align: left;
@@ -72,8 +72,7 @@
 
     .description {
       color: var(--ytstv-muted);
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 12px;
     }
 
     .actions {

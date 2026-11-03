@@ -29,7 +29,7 @@
     flex-shrink: 0;
     padding: 0;
     border: 0;
-    border-radius: 6px;
+    border-radius: 8px;
     background: transparent;
     color: var(--ytstv-muted);
     cursor: pointer;
@@ -37,7 +37,7 @@
 
     &:focus-visible {
       outline: 2px solid var(--ytstv-accent);
-      outline-offset: 3px;
+      outline-offset: 4px;
     }
 
     &:hover,
