@@ -44,11 +44,9 @@ none
 
 #### Screenshots
 
-![Screenshot 1](./screenshot-1-v2.png)
-![Screenshot 2](./screenshot-2-v2.png)
-![Screenshot 3](./screenshot-3-v2.png)
-![Screenshot 4](./screenshot-4-v2.png)
-![Screenshot 5](./screenshot-5-v2.png)
+![Switch to TV mode and continue the current video](./screenshot-1.png)
+![Pair your phone with a TV code to control playback](./screenshot-2.png)
+![Customize launch controls and launch behavior](./screenshot-3.png)
 
 #### Small promo tile
 

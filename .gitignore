@@ -28,4 +28,4 @@ web-ext.config.ts
 *.sw?
 
 TODOs.md
-assets/store/*.ps1
+assets/store/archive/
