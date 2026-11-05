@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-05
+
+### Changed
+
+- Refresh the popup and settings interface, with clearer layouts and links to support and release notes.
+- Update Chrome Web Store screenshots.
+
+### Fixed
+
+- Ensure the Smart TV player button appears even when the video player loads slowly.
+- Save settings changes immediately and consistently use the latest preferences when opening TV mode.
+- Open TV tabs in the same browser window as the source YouTube page.
+- Keep TV-mode compatibility adjustments from affecting other YouTube pages.
+
 ## [1.0.8] - 2026-09-03
 
 ### Fixed
