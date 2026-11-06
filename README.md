@@ -18,7 +18,7 @@
       <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/75.0.1/chrome/chrome_48x48.png" alt="Chromium" />
     </td>
     <td><a href="https://chromewebstore.google.com/detail/youtube-smart-tv/hbjlacanppahcoagjkfgpkolhbfdkmdi">Chrome&nbsp;Web&nbsp;Store</a></td>
-    <td>Last updated: September 3, 2026 (v1.0.8)</td>
+    <td>Last updated: November 6, 2026 (v1.1.0)</td>
   </tr>
   <tr>
     <td align="center">
