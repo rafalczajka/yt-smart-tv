@@ -6,10 +6,10 @@ updates:
     schedule:
       interval: weekly
     groups:
-      npm-dev-dependencies:
-        dependency-type: development
-      npm-production-dependencies:
-        dependency-type: production
+      npm-dependencies:
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: github-actions
     directory: /
